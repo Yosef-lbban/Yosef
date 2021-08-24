@@ -11264,6 +11264,29 @@ send(msg.chat_id_, msg.id_, '⟐︙ ارسل لي عدد النقاط التي �
 return false
 end
 ------------------------------------------------------------------------
+function Delete_Message(chat,id)
+  pcall(tdcli_function ({
+  ID="DeleteMessages",
+  chat_id_=chat,
+  message_ids_=id
+  },function(arg,data) 
+  end,nil))
+  end
+
+  if text and text:match('^مسح (%d+)$') and Constructor(msg) or text and text:match('^حذف (%d+)$') and Constructor(msg) or text and text:match('^احذفف (%d+)$') and Constructor(msg) then    
+    local Msg_Num = tonumber(text:match('^مسح (%d+)$')) or tonumber(text:match('^حذف (%d+)$'))  or tonumber(text:match('^احذفف (%d+)$')) 
+    if Msg_Num > 1000 then 
+    send(msg.chat_id_, msg.id_,'⇽ تستطيع حذف *(1000)* رساله فقط') 
+    return false  
+    end  
+    local Message = msg.id_
+    for i=1,tonumber(Msg_Num) do
+    Delete_Message(msg.chat_id_,{[0]=Message})
+    Message = Message - 1048576
+    end
+    send(msg.chat_id_, msg.id_,'⇽ تم ازالة *- '..Msg_Num..'* رساله من المجموعه')  
+    end
+
 if text and text:match("^اضف نقاط (%d+)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then
 local Num = text:match("^اضف نقاط (%d+)$")
 function reply(extra, result, success)
