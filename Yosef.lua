@@ -11591,7 +11591,6 @@ local Text =[[
 *4️⃣◂ اوامر مسح ~ حذف .*
 *5️⃣◂ اوامر تنزيل+رفع+التغير .*
 *6️⃣◂ اوامر الكروب .*
-*7️⃣◂ اوامر التحشيش .*
 *8️⃣◂ اوامر مطور البوت .*
 *9️⃣◂ اوامر مطور الاساسي .*
 *🔟◂ اوامر الاعضاء .*
@@ -11664,93 +11663,6 @@ return false
 end
 ----------------------------------------------------------------- انتهئ الاوامر الجديدة
 
-if text == "تعطيل الزغرفه" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '⟐︙ تم تعطيل الزغرفه')
-database:set(bot_id.." Yosef:zhrf_Bots"..msg.chat_id_,"close")
-end
-if text == "تفعيل الزغرفه" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'⟐︙ تم تفعيل الزغرفه')
-database:set(bot_id.." Yosef:zhrf_Bots"..msg.chat_id_,"open")
-end
-if text and text:match("^زغرفه (.*)$") and database:get(bot_id.." Yosef:zhrf_Bots"..msg.chat_id_) == "open" then
-local TextZhrfa = text:match("^زغرفه (.*)$")
-zh = https.request('https://rudi-dev.tk/Amir1/Boyka.php?en='..URL.escape(TextZhrfa)..'')
-zx = JSON.decode(zh)
-t = "\n⟐︙ قائمه الزغرفه \n𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻\n"
-i = 0
-for k,v in pairs(zx.ok) do
-i = i + 1
-t = t..i.."-  "..v.." \n"
-end
-send(msg.chat_id_, msg.id_, t..'𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ\n⟐︙ ➫ .[ Yosef. ](t.me/Yousef_Labban)➤ ')
-end
-if text == "تعطيل الابراج" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '⟐︙ تم تعطيل الابراج')
-database:set(bot_id.." Yosef:brj_Bots"..msg.chat_id_,"close")
-end
-if text == "تفعيل الابراج" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'⟐︙ تم تفعيل الابراج')
-database:set(bot_id.." Yosef:brj_Bots"..msg.chat_id_,"open")
-end
-if text and text:match("^برج (.*)$") and database:get(bot_id.." Yosef:brj_Bots"..msg.chat_id_) == "open" then
-local Textbrj = text:match("^برج (.*)$")
-gk = https.request('https://rudi-dev.tk/Amir2/Boyka.php?br='..URL.escape(Textbrj)..'')
-br = JSON.decode(gk)
-i = 0
-for k,v in pairs(br.ok) do
-i = i + 1
-t = v.."\n"
-end
-send(msg.chat_id_, msg.id_, t)
-end
-if text == "تعطيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '⟐︙ تم تعطيل حساب العمر')
-database:set(bot_id.." Yosef:age_Bots"..msg.chat_id_,"close")
-end
-if text == "تعطيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '⟐︙ تم تعطيل حساب العمر')
-database:set(bot_id.." Yosef:age_Bots"..msg.chat_id_,"close")
-end
-if text == "تفعيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'⟐︙ تم تفعيل حساب العمر')
-database:set(bot_id.." Yosef:age_Bots"..msg.chat_id_,"open")
-end
-if text and text:match("^احسب (.*)$") and database:get(bot_id.." Yosef:age_Bots"..msg.chat_id_) == "open" then
-local Textage = text:match("^احسب (.*)$")
-ge = https.request('https://rudi-dev.tk/Amir3/Boyka.php?age='..URL.escape(Textage)..'')
-ag = JSON.decode(ge)
-i = 0
-for k,v in pairs(ag.ok) do
-i = i + 1
-t = v.."\n"
-end
-send(msg.chat_id_, msg.id_, t)
-end
-if text == "تعطيل الافلام" and Mod(msg) then
-send(msg.chat_id_, msg.id_, '⟐︙ تم تعطيل الافلام')
-database:set(bot_id.."Yosef:movie_bot"..msg.chat_id_,"close")
-end
-if text == "تفعيل الافلام" and Mod(msg) then
-send(msg.chat_id_, msg.id_,'⟐︙ تم تفعيل الافلام')
-database:set(bot_id.."Yosef:movie_bot"..msg.chat_id_,"open")
-end
-if text and text:match("^فلم (.*)$") and database:get(bot_id.."Yosef:movie_bot"..msg.chat_id_) == "open" then
-local Textm = text:match("^فلم (.*)$")
-data,res = https.request('https://forhassan.ml/Black/movie.php?serch='..URL.escape(Textm)..'')
-if res == 200 then
-getmo = json:decode(data)
-if getmo.Info == true then
-local Text ='قصه الفلم'..getmo.info
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = 'مشاهده الفلم بجوده 240',url=getmo.sd}},
-{{text = 'مشاهده الفلم بجوده 480', url=getmo.Web},{text = 'مشاهده الفلم بجوده 1080', url=getmo.hd}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
-end
 if text == "شنو رئيك بهذا" or text == "شنو رئيك بهذ" or text == "شنو رئيج بهذ" or text == "شنو رئيج بهذا" or text == "شنو رايك بهذا" or text == "شنو رايك بهذ" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
 local texting = {"ادب سسز يباوع علي بنات 😂🥺"," مو خوش ولد 😶","زاحف وما احبه 😾😹"}
@@ -11966,7 +11878,6 @@ local Teext =[[
 ⟐︙الكتم الاسم
 ⟐︙زخرفه
 ⟐︙ردود البوت
-⟐︙اوامر التحشيش
 ⟐︙صورتي 
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
 ➫ .[ Yosef.](t.me/Yousef_Labban)➤
@@ -12262,9 +12173,7 @@ return false
 end
 local Teext =[[
 🤹🏻┇𝙵𝚄𝙽𝙽𝚈 𝙾𝚁𝙳𝙴𝚁𝚂 .
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-⟐︙ الاوامر التحشيش 🃏
-𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ٴ
 ⟐︙ رفع + تنزيل ← الامࢪ ↓
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ
 ⟐︙رفع + تنزيل ← مطي 
@@ -12544,7 +12453,6 @@ local Teext =[[
 *4️⃣◂ اوامر مسح ~ حذف .*
 *5️⃣◂ اوامر تنزيل+رفع+التغير .*
 *6️⃣◂ اوامر الكروب .*
-*7️⃣◂ اوامر التحشيش .*
 *8️⃣◂ اوامر مطور البوت .*
 *9️⃣◂ اوامر مطور الاساسي .*
 *🔟◂ اوامر الاعضاء .*
@@ -12788,14 +12696,6 @@ local NewCmmd = database:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..da
 if NewCmmd then
 data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
 end
-end
-if (text and text == "تعطيل اوامر التحشيش") then 
-send(msg.chat_id_, msg.id_, '⟐︙ تم تعطيل اوامر التحشيش')
-database:set(bot_id.."Fun_Bots:"..msg.chat_id_,"true")
-end
-if (text and text == "تفعيل اوامر التحشيش") then 
-send(msg.chat_id_, msg.id_, ' ⟐︙ تم تفعيل اوامر التحشيش')
-database:del(bot_id.."Fun_Bots:"..msg.chat_id_)
 end
 local Name_Bot = (database:get(bot_id..'Name:Bot') or 'يوسف')
 if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
