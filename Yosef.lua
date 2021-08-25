@@ -2493,53 +2493,6 @@ end
 end
 bnnaGet(msg.sender_user_id_, D9l9l_name)
 end
-if database:get(bot_id.."kt:twh:stats"..msg.chat_id_) == "open" then
-if text and text:match("^وضع توحيد (.*)$") and Manager(msg) and database:get(bot_id.."kt:twh:stats"..msg.chat_id_) == "open" then
-local teh = text:match("^وضع توحيد (.*)$")
-send(msg.chat_id_, msg.id_,'⟐︙ تم تعيين '..teh..' كتوحيد للمجموعه')
-database:set(bot_id.."Yosef:teh"..msg.chat_id_,teh)
-end
-if text and text:match("^تعين عدد الكتم (.*)$") and Manager(msg) and database:get(bot_id.."kt:twh:stats"..msg.chat_id_) == "open" then
-local nump = text:match("^تعين عدد الكتم (.*)$")
-send(msg.chat_id_, msg.id_,'⟐︙ تم تعين  '..nump..' عدد الكتم')
-database:set(bot_id.."Yosef:nump"..msg.chat_id_,nump)
-end
-if text == "التوحيد" then
-local s1 = database:get(bot_id.."Yosef:teh"..msg.chat_id_) or "لا يوجد توحيد"
-local s2 = database:get(bot_id.."Yosef:nump"..msg.chat_id_) or 5
-send(msg.chat_id_, msg.id_,'⟐︙ التوحيد '..s1..'\n⟐︙ عدد الكتم  : '..s2)
-end
-end
-if text == "تفعيل التوحيد" and Constructor(msg) and database:get(bot_id.."AL:AddS0FI:stats") == "✔" then
-send(msg.chat_id_, msg.id_, '⟐︙ تم تفعيل التوحيد')
-database:set(bot_id.."kt:twh:stats"..msg.chat_id_,"open")
-end
-if text == "تعطيل التوحيد" and Constructor(msg) and database:get(bot_id.."AL:AddS0FI:stats") == "✔" then
-send(msg.chat_id_, msg.id_, '⟐︙ تم تعطيل التوحيد')
-database:set(bot_id.."kt:twh:stats"..msg.chat_id_,"close")
-end
-if not Constructor(msg) then
-if database:get(bot_id.."kt:twh:stats"..msg.chat_id_) == "open"  and database:get(bot_id.."Yosef:teh"..msg.chat_id_) then 
-id = msg.sender_user_id_
-function Yosef_mrYosef_new(mrYosef1,mrYosef2)
-if mrYosef2 and mrYosef2.first_name_ then 
-if mrYosef2.first_name_:match("(.*)"..database:get(bot_id.."Yosef:teh"..msg.chat_id_).."(.*)") then 
-database:srem(bot_id.."Yosef:Muted:User"..msg.chat_id_, msg.sender_user_id_)
-else
-local mrYosef_nnn = database:get(bot_id.."Yosef:nump"..msg.chat_id_) or 5
-local mrYosef_nnn2 = database:get(bot_id.."Yosef:nump22"..msg.chat_id_..msg.sender_user_id_) or 0
-if (tonumber(mrYosef_nnn2) == tonumber(mrYosef_nnn) or tonumber(mrYosef_nnn2) > tonumber(mrYosef_nnn)) then 
-database:sadd(bot_id..'Muted:User'..msg.chat_id_, msg.sender_user_id_)
-else 
-database:incrby(bot_id.."Yosef:nump22"..msg.chat_id_..msg.sender_user_id_,1)
-send(msg.chat_id_, msg.id_, "⟐︙ عزيزي >>["..mrYosef2.username_.."](https://t.me/"..(mrYosef2.username_ or "Yousef_Labban")..")\n⟐︙ عليك وضع التوحيد ⪼ {"..database:get(bot_id.."Yosef:teh"..msg.chat_id_).."} بجانب اسمك\n⟐︙ عدد المحاولات المتبقيه {"..(tonumber(mrYosef_nnn) - tonumber(mrYosef_nnn2)).."}")
-end
-end
-end
-end
-bnnaGet(id, Yosef_mrYosef_new)
-end
-end
 if text == "تفعيل تنبيه الاسماء" and Manager(msg) and database:get(bot_id.."AL:AddS0FI:stats") == "✔" then
 send(msg.chat_id_, msg.id_, '⟐︙ تم تفعيل تنبيه الاسماء')
 database:set(bot_id.."Ttn:DRG:stats"..msg.chat_id_,"open")
@@ -3063,79 +3016,6 @@ database:del(bot_id.."lock:user:name"..msg.chat_id_)
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 send(msg.chat_id_, msg.id_,'⟐︙ بواسطه » ['..Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'Yousef_Labban')..') \n⟐︙ تـم فتح المعرفات ')
 end,nil)   
-end
-
-if text == 'تفعيل نسبه الحب' and Manager(msg) then   
-if database:get(bot_id..'Cick:lov'..msg.chat_id_) then
-Text = '⟐︙ تم تفعيل نسبه الحب'
-database:del(bot_id..'Cick:lov'..msg.chat_id_)  
-else
-Text = '⟐︙ بالتاكيد تم تفعيل نسبه الحب'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل نسبه الحب' and Manager(msg) then  
-if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
-database:set(bot_id..'Cick:lov'..msg.chat_id_,true)  
-Text = '\n⟐︙ تم تعطيل نسبه الحب'
-else
-Text = '\n⟐︙ بالتاكيد تم تعطيل نسبه الحب'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تفعيل نسبه الرجوله' and Manager(msg) then   
-if database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
-Text = '⟐︙ تم تفعيل نسبه الرجوله'
-database:del(bot_id..'Cick:rjo'..msg.chat_id_)  
-else
-Text = '⟐︙ بالتاكيد تم تفعيل الرجوله'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل نسبه الرجوله' and Manager(msg) then  
-if not database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
-database:set(bot_id..'Cick:rjo'..msg.chat_id_,true)  
-Text = '\n⟐︙ تم تعطيل نسبه الرجوله'
-else
-Text = '\n⟐︙ بالتاكيد تم تعطيل نسبه الرجوله'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تفعيل نسبه الكره' and Manager(msg) then   
-if database:get(bot_id..'Cick:krh'..msg.chat_id_) then
-Text = '⟐︙ تم تفعيل نسبه الكره'
-database:del(bot_id..'Cick:krh'..msg.chat_id_)  
-else
-Text = '⟐︙ بالتاكيد تم تفعيل نسبه الكره'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل نسبه الكره' and Manager(msg) then  
-if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
-database:set(bot_id..'Cick:krh'..msg.chat_id_,true)  
-Text = '\n⟐︙ تم تعطيل نسبه الكره'
-else
-Text = '\n⟐︙ بالتاكيد تم تعطيل نسبه الكره'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تفعيل نسبه الانوثه' and Manager(msg) then   
-if database:get(bot_id..'Cick:ano'..msg.chat_id_) then
-Text = '⟐︙ تم تفعيل نسبه الانوثه'
-database:del(bot_id..'Cick:ano'..msg.chat_id_)  
-else
-Text = '⟐︙ بالتاكيد تم تفعيل الانوثه'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل نسبه الانوثه' and Manager(msg) then  
-if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
-database:set(bot_id..'Cick:ano'..msg.chat_id_,true)  
-Text = '\n⟐︙ تم تعطيل نسبه الانوثه'
-else
-Text = '\n⟐︙ بالتاكيد تم تعطيل نسبه الانوثه'
-end
-send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تفعيل all' and CoSu(msg) then   
 if database:get(bot_id..'Cick:all'..msg.chat_id_) then
@@ -11671,7 +11551,7 @@ local Text =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/Yosef"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
 },
 {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
@@ -11888,16 +11768,9 @@ local Teext =[[
 ⟐︙ردود المدير
 ⟐︙ٴall
 ⟐︙الردود
-⟐︙نسبة الحب
-⟐︙نسبة الرجوله
-⟐︙نسبه الانوثه 
-⟐︙نسبه الكره
-⟐︙حساب العمر
-⟐︙الابراج
 ⟐︙تنبيه الاسماء
 ⟐︙تنبيه المعرف
 ⟐︙تنبيه الصور
-⟐︙التوحيد
 ⟐︙الكتم الاسم
 ⟐︙زخرفه
 ⟐︙ردود البوت
@@ -12153,13 +12026,8 @@ local Teext =[[
 ⟐︙وضع توحيد + توحيد
 ⟐︙تعين عدد الكتم + رقم
 ⟐︙كتم اسم + اسم
-⟐︙التوحيد
 ⟐︙غنيلي
 ⟐︙قائمه المنع
-⟐︙نسبه الحب 
-⟐︙نسبه رجوله
-⟐︙نسبه الكره
-⟐︙نسبه الانوثه
 ⟐︙الساعه
 ⟐︙التاريخ
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
@@ -12522,7 +12390,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/Yosef"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
 },
 {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
@@ -12555,7 +12423,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/Yosef"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
 },
 {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
@@ -12585,7 +12453,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/Yosef"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
 },
 {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
@@ -12615,7 +12483,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/Yosef"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
 },
 {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
@@ -12645,7 +12513,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/Yosef"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
 },
 {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
@@ -12680,7 +12548,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'التوحيد', callback_data="/Yosef"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
+{text = 'كتم الاسماء', callback_data="/mute-name"},{text = 'تنبيه الأسماء', callback_data="/change-names"},
 },
 {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
@@ -12719,87 +12587,6 @@ local NewCmmd = database:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..da
 if NewCmmd then
 data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
 end
-end
-local Name_Bot = (database:get(bot_id..'Name:Bot') or 'يوسف')
-if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
-if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
-function FunBot(extra, result, success) 
-local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 💋🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير ا��حب مال اني 🤓❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
-send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
-end   
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
-return false
-end  
-if text == ""..Name_Bot..' تحب هذا' and tonumber(msg.reply_to_message_id_) > 0 then    
-function FunBot(extra, result, success) 
-local Fun = {'الكبد مال اني ','يولي ماحبه ',' لٱ ايع ','بس لو الكفها اله اعضها 💔','ماخب مطايه اسف','اكلك ۿذﭑ يكلي احبكك لولا ﭑݩٺ شتكول  ','ئووووووووف اموت ع ربه ','ايععععععععع','بلعباس اعشكك','ماحب مخابيل','احبب ميدو وبس','لٱ ماحبه','بله هاي جهره تكلي تحبهه ؟ ','بربك ئنته والله فارغ وبطران وماعدك شي تسوي جاي تسئلني احبهم لولا','افبس حبيبي هذا' } 
-send(msg.chat_id_,result.id_,''..Fun[math.random(#Fun)]..'') 
-end  
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
-return false
-end    
-end
-if text and text:match('^'..Name_Bot..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..Name_Bot..' ','')
-end
-if text and text:match('^'..Name_Bot..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..Name_Bot..' ','')
-end
-if text == "نسبه الحب" or text == "نسبه حب" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
-database:set(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_,"sendlove")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال روظي و وروان'
-send(msg.chat_id_, msg.id_,Text) 
-end
-end
-if text and text ~="نسبه الحب" and database:get(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_) == "sendlove" then
-num = {"10","20","30","35","75","34","66","82","23","19","55","8","63","32","27","89","99","98","3","80","49","100","6","0",};
-sendnum = num[math.random(#num)]
-sl = 'نسبه حب '..text..' هي : '..sendnum..'%'
-send(msg.chat_id_, msg.id_,sl) 
-database:del(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_)
-end
-if text == "نسبه الكره" or text == "نسبه كره" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
-database:set(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_,"sendkrhe")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال اسد و لبوى'
-send(msg.chat_id_, msg.id_,Text) 
-end
-end
-if text and text ~="نسبه الكره" and database:get(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_) == "sendkrhe" then
-num = {"10","20","30","35","75","34","66","82","23","19","55","8","63","32","27","89","99","98","3","80","8","100","6","0",};
-sendnum = num[math.random(#num)]
-sl = 'نسبه كره '..text..' هي : '..sendnum..'%'
-send(msg.chat_id_, msg.id_,sl) 
-database:del(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_)
-end
-if text == "نسبه رجوله" or text == "نسبه الرجوله" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-if not database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
-database:set(bot_id..":"..msg.sender_user_id_..":rjo_Bots"..msg.chat_id_,"sendrjoe")
-Text = 'ارسل اسم الشخص الذي تريد قياس نسبه رجولته \n مثال مصطفئ'
-send(msg.chat_id_, msg.id_,Text) 
-end
-end
-if text and text ~="نسبه رجوله" and database:get(bot_id..":"..msg.sender_user_id_..":rjo_Bots"..msg.chat_id_) == "sendrjoe" then
-numj = {"10","20","30","35","75","34","66","82","23","19","55","80","63","32","27","89","99","98","79","100","8","3","6","0",};
-sendnuj = numj[math.random(#numj)]
-xl = 'نسبه رجوله '..text..' هي : \n '..sendnuj..'%'
-send(msg.chat_id_, msg.id_,xl) 
-database:del(bot_id..":"..msg.sender_user_id_..":rjo_Bots"..msg.chat_id_)
-end
-if text == "نسبه الانوثه" or text == "نسبه انوثه" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
-database:set(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_,"sendanoe")
-Text = 'ارسل اسم الشخص الذي تريد قياس نسبه انوثتها \n مثال روان'
-send(msg.chat_id_, msg.id_,Text) 
-end
-end
-if text and text ~="نسبه الانوثه" and database:get(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_) == "sendanoe" then
-numj = {"10","20","30","35","75","34","66","82","23","19","55","80","63","32","27","89","99","98","79","100","8","3","6","0",};
-sendnuj = numj[math.random(#numj)]
-xl = 'نسبه الانوثه '..text..' هي : \n '..sendnuj..'%'
-send(msg.chat_id_, msg.id_,xl) 
-database:del(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_)
 end
 --------------------------------------------------------------------------------------------------------------
 if msg.sender_user_id_ and Muted_User(msg.chat_id_,msg.sender_user_id_) then 
