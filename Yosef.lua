@@ -11907,7 +11907,7 @@ local Teext =[[
 ☆︙ الجهات
 ☆︙ الاشعارات
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11976,7 +11976,7 @@ local Teext =[[
 ☆︙اوامر التحشيش
 ☆︙صورتي 
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12027,7 +12027,7 @@ local Teext =[[
 ☆︙ وصف
 ☆︙ تكرار + عدد
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12087,7 +12087,7 @@ local Teext =[[
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴ
 ☆︙ الاوامر المضافه ( لعرض الاوامر المضافه ) 
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12152,7 +12152,7 @@ local Teext =[[
 ☆︙ تغير امر الاوامر
 ☆︙ تغير امر م1 ~ الئ م10
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12236,7 +12236,7 @@ local Teext =[[
 ☆︙الساعه
 ☆︙التاريخ
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12310,7 +12310,7 @@ local Teext =[[
 ☆︙رفع + تنزيل ← الحاته
 ☆︙تاك للحاتات
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12354,7 +12354,7 @@ local Teext =[[
 ☆︙اسم ~ ايدي + بوت غادر 
 ☆︙اذاعه 
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12451,7 +12451,7 @@ local Teext =[[
 ☆︙تنظيف المشتركين
 ☆︙تنظيف القروبات
 𓍹ⵧⵧⵧⵧⵧⵧ⊱•Yosef•⊰ⵧⵧⵧⵧⵧⵧ𓍻ٴٴ
-➫ .[ Yosef.](t.me/Yousef_Labban)➤
+➫ .[ شبكة منهاج.](https://www.youtube.com/channel/UCTjdBpWvEdgiorvWSeB3VwA)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
